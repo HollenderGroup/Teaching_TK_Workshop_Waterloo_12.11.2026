@@ -13,10 +13,10 @@ Toxicokinetic processes (uptake, elimination and biotransformation) set the inte
 ## What you will learn
 
 - Fit TK models and derive parameters such as kinetic rate constants and bioconcentration factors (BCFs)
-- Account for the effect of temperature on toxicokinetic processes
 - Model biotransformation with parent–metabolite models
 - Explore multi-compartment kinetics, such as elimination resistance through receptor binding, and lipid partitioning
 - Add dietary uptake and your own processes to a TK model
+- Account for the effect of temperature on toxicokinetic processes
 
 No prior experience with bioaccumulation or programming is needed.
 
