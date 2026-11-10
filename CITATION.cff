@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use or adapt this material, please cite it as below. Please also cite the original data sources listed in the README."
+type: software
+title: "Bioaccumulation in Aquatic Organisms: From One-Compartment Toxicokinetic Models to Real-World Complexity. Workshop material, University of Waterloo"
+abstract: >-
+  R scripts, curated datasets and teaching material for a half-day,
+  hands-on workshop on toxicokinetic (TK) modelling of organic
+  contaminants in aquatic invertebrates (University of Waterloo,
+  12 November 2026). Exercises cover the one-compartment TK model,
+  parent-metabolite (biotransformation) models, two-compartment models
+  with receptor binding and lipid partitioning, and dietary uptake. The
+  scripts are an R re-implementation of the BYOM model TK-metabolism and
+  include the parameter-space explorer for confidence intervals.
+authors:
+  - family-names: Raths
+    given-names: Johannes
+    affiliation: "Eawag, Swiss Federal Institute of Aquatic Science and Technology"
+    orcid: "https://orcid.org/0000-0002-3258-0893"
+version: "1.0.0"
+date-released: "2026-11-12"
+doi: "10.5281/zenodo.XXXXXXX"
+repository-code: "https://github.com/HollenderGroup/Teaching_TK_Workshop_Waterloo_12.11.2026"
+license: GPL-3.0-or-later
+keywords:
+  - toxicokinetics
+  - bioaccumulation
+  - bioconcentration factor
+  - biotransformation
+  - ecotoxicology
+  - aquatic invertebrates
+  - BYOM
+  - R
+  - teaching material
+references:
+  - type: software
+    title: "TK-metabolism"
+    authors:
+      - family-names: Raths
+        given-names: Johannes
+    url: "https://github.com/HollenderGroup/Bioaccumulation_TK-metabolism"
+  - type: software
+    title: "BYOM (Build Your Own Model)"
+    authors:
+      - family-names: Jager
+        given-names: Tjalling
+    version: "6.2"
+    url: "https://www.debtox.info/byom.html"

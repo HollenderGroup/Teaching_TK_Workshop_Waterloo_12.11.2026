@@ -1,0 +1,96 @@
+==============================================================================
+TK model with biotransformation (BYOM TK-metabolism) - TK Workshop, Exercise 2
+==============================================================================
+Run name : DFF   (10-Nov-2026 18:11)
+Data file: C:\Users\rathsjoh\Music\Private\00_Courses\Teaching\TK Waterloo\Scripts\TK_2_biotransformation_data.xlsx
+Output   : C:\Users\rathsjoh\Music\Private\00_Courses\Teaching\TK Waterloo\Scripts\TK_2_biotransformation_output
+  Sheet '1': column names found in row 6; the rows above are skipped.
+  sheet 1: 77 rows
+  Compounds in the file: Diflufenican
+  Selected compound: Diflufenican (77 rows)
+  Units in the file: medium µg/L | tissue µg/kg ww
+
+Available scenarios ("code | treatment"; medium / tissue rows):
+  "AE0 | 20.1"                       A. aquaticus    14 /  18   tissue at t = 0, 0.25, 1, 2, 3, 3.25
+  "AE1 | 20.4"                       A. aquaticus    12 /  33   tissue at t = 0, 0.08667, 0.1667, 0.2883, 1.001, 2.001, 2.085, 2.167, 2.25, 3, 4
+
+Models to calibrate (1 model(s) x 1 version(s) = 1 fits):
+   1. AE1 | 20.4                   AE1 | 20.4
+  Biotransformation: ON (parent + BTP fitted)
+  Units            : converted to umol (M Diflufenican = 394.29, M AE B107137 = 283.20 g/mol)
+
+##############################################################################
+MODEL 1 of 1: AE1 | 20.4   (AE1 | 20.4)   biotransformation ON
+##############################################################################
+  Scenario AE1 | 20.4
+    medium 11 time points | tissue 33 Diflufenican, 33 AE B107137 values | start:     0 /     0 umol/kg ww | end of exposure: 2.0013 d
+  Solver check (analytical vs. deSolve at start values): max. relative difference = 1.6e-10  -> OK
+
+Fitting AE1 | 20.4 (4 parameters: ku, ke, km, kem; data transformation: square root)
+  Method: parameter-space explorer (roughness 1, profiles on)
+  Starting round 1 with initial grid of 4096 parameter sets
+    Status: best fit so far is (minloglik) 13.33338
+  Starting round 2, refining a selection of 200 parameter sets, with 35 tries each
+    Status: 4 sets within total CI and 2 within inner. Best fit: 1.990603
+  Starting round 3, refining a selection of 200 parameter sets, with 35 tries each
+    Status: 25 sets within total CI and 5 within inner. Best fit: 1.045236
+  Starting round 4, refining a selection of 200 parameter sets, with 35 tries each
+    Status: 167 sets within total CI and 15 within inner. Best fit: 1.043722
+  Starting round 5, refining a selection of 315 parameter sets, with 22 tries each
+    Status: 659 sets within total CI and 85 within inner. Best fit: 1.043722
+  Starting round 6, refining a selection of 853 parameter sets, with 5 tries each
+    Status: 1435 sets within total CI and 233 within inner. Best fit: 1.043722
+    Next round will focus on inner rim (outer rim has enough points)
+  Starting round 7, refining a selection of 402 parameter sets, with 5 tries each
+    Status: 2518 sets within total CI and 524 within inner. Best fit: 1.043722
+  Finished sampling, running a simplex optimisation ...
+    Status: 2517 sets within total CI and 524 within inner. Best fit: 1.039598
+  Starting round 8, creating the profile likelihoods for each parameter
+    Profile for ke extended to lower values (1 points)
+    Status: 2517 sets within total CI and 524 within inner. Best fit: 1.039598
+    Profiling has detected gaps between profile and sample, which requires extra sampling rounds.
+  Starting round 9, (extra 1) refining a selection of 34 parameter sets, with 40 tries each
+    Status: 3008 sets within total CI and 550 within inner. Best fit: 1.039598
+  Starting round 10, (extra 2) refining a selection of 14 parameter sets, with 40 tries each
+    Status: 3246 sets within total CI and 571 within inner. Best fit: 1.039598
+  Starting round 11, (extra 3) refining a selection of 6 parameter sets, with 40 tries each
+    Status: 3368 sets within total CI and 595 within inner. Best fit: 1.039598
+  Starting round 12, (extra 4) refining a selection of 2 parameter sets, with 40 tries each
+    Status: 3434 sets within total CI and 628 within inner. Best fit: 1.039598
+
+==============================================================================
+Results AE1 | 20.4
+==============================================================================
+Method        : parspace  (sample: 3634 sets in joint CI, 744 in inner CI)
+Units         : concentrations in umol/kg ww, time in days
+Minus log-likelihood: 1.039598   (AIC =  10.0792)
+R-square Diflufenican  :  0.936  (n = 33, transformed data)
+R-square AE B107137    :  0.683  (n = 33, transformed data)
+
+Best estimates and 95% CIs (profile likelihood)
+------------------------------------------------------------------------------
+ku   best:       1158 (     958.3 -  1407     ) fit: 1 (log) 
+ke   best:      3.032 (    0.5644 - 4.606     ) fit: 1 (log) 
+km   best:      2.577 (     1.599 - 4.642     ) fit: 1 (log) 
+kem  best:      2.411 (     1.544 - 4.304     ) fit: 1 (log) 
+------------------------------------------------------------------------------
+
+Derived quantities (CIs: range over the parameter sets within the 95% region)
+  BCF_parent                    206.4 (     187.3 - 225.9     )
+  t_half_parent_d              0.1236 (     0.104 - 0.1464    )
+  t95_parent_d                 0.5341 (    0.4493 - 0.6326    )
+  BCF_total_molar               426.9 (     388.1 - 468.1     )
+  fraction_biotransformed      0.4594 (    0.2757 - 0.9243    )
+  t_half_BTP_d                 0.2875 (    0.1584 - 0.4517    )
+  BTP_to_parent_ratio_ss        1.069 (    0.8711 - 1.294     )
+
+Calculating 95% CI and prediction bands from 875 parameter sets ...
+
+Goodness of fit (PPC acceptable >= 50%, NRMSE acceptable <= 50%, |PE| acceptable <= 20%; PE > 0 = overprediction)
+  state                  scenario                      n      R2    NRMSE%      PPC%       PE%
+  Diflufenican           all (pooled)                 33   0.936     28.2       100     -16.6 
+  Diflufenican           AE1 | 20.4                   33   0.936     28.2       100     -16.6 
+  AE B107137             all (pooled)                 33   0.683     38.6        97      10.5 
+  AE B107137             AE1 | 20.4                   33   0.683     38.6        97      10.5 
+  (! = outside the acceptance criterion; PE at the end of exposure, 'all' = mean over scenarios, ok only if every scenario is ok)
+Time required for AE1 | 20.4: 21.9 s

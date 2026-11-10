@@ -1,0 +1,67 @@
+==============================================================================
+Two-compartment TK model: receptor binding - TK Workshop, Exercise 3a
+==============================================================================
+Run name : THI   (10-Nov-2026 18:11)
+Data file: C:\Users\rathsjoh\Music\Private\00_Courses\Teaching\TK Waterloo\Scripts\TK_3a_receptor_binding_data.xlsx
+Output   : C:\Users\rathsjoh\Music\Private\00_Courses\Teaching\TK Waterloo\Scripts\TK_3a_receptor_binding_output
+  Sheet '1': column names found in row 6; the rows above are skipped.
+  sheet 1: 138 rows
+  NOTE: 5 entries in 'sheet 1 Parent concentration' set to 0 (below LOQ): <LOQ
+  Compounds in the file: Thiacloprid
+  Selected compound: Thiacloprid (138 rows)
+  Units in the file: medium µg/L | tissue µg/kg ww
+
+Available scenarios ("code | treatment"; medium / tissue rows):
+  "I | 50"                           G. pulex         4 /  30   tissue at t = 0, 0.1243, 0.25, 0.4167, 1.001, 1.417, 1.997, 2.125, 2.25, 2.417, 3, 4, 6, 8, 10
+  "II | 0.05"                        G. pulex        10 /  12   tissue at t = 10, 15, 20, 25
+  "II | 0.5"                         G. pulex        10 /  12   tissue at t = 10, 15, 20, 25
+  "II | 5"                           G. pulex         4 /   6   tissue at t = 4, 8
+  "III | 1500"                       G. pulex         4 /   6   tissue at t = 2, 4
+  "III | 5"                          G. pulex         4 /   6   tissue at t = 2, 4
+  "III | 50"                         G. pulex         4 /   6   tissue at t = 2, 4
+  "III | 500"                        G. pulex         4 /   6   tissue at t = 2, 4
+  "III | 5000"                       G. pulex         4 /   6   tissue at t = 2, 4
+
+Models to calibrate (1 model(s) x 2 version(s) = 2 fits):
+   1. I | 50                       I | 50
+  Model versions   : with receptor binding  and  without receptor binding
+  Units            : converted to umol (M Thiacloprid = 252.72 g/mol)
+
+##############################################################################
+MODEL 2 of 2: I | 50   (I | 50)   one-compartment TK model
+##############################################################################
+  Scenario I | 50
+    medium 3 time points | tissue 30 Thiacloprid values | start:     0 umol/kg ww | end of exposure:      2 d
+
+Fitting I | 50 (2 parameters: ku, ke; data transformation: square root)
+  Method: Nelder-Mead simplex (2 runs) from the start values
+  Simplex run 1 (rough): MLL = 17.04363 (23 evaluations)
+  Simplex run 2: MLL = 12.85791 (155 evaluations)
+
+==============================================================================
+Results I | 50
+==============================================================================
+Method        : simplex
+Units         : concentrations in umol/kg ww, time in days
+Minus log-likelihood: 12.85791   (AIC = 29.71583)
+R-square Thiacloprid   :  0.416  (n = 30, transformed data)
+
+Best estimates and 95% CIs (profile likelihood)
+------------------------------------------------------------------------------
+ku   best:      2.539 (     1.829 - 3.662     ) fit: 1 (log) 
+ke   best:      0.328 (    0.1807 - 0.601     ) fit: 1 (log) 
+------------------------------------------------------------------------------
+
+Derived quantities (CIs: range over the parameter sets within the 95% region)
+  BCF                           7.741 (     5.963 -  10.6     )
+  t_half_d                      2.113 (     1.208 - 3.673     )
+  t95_d                         9.134 (     5.219 - 15.87     )
+
+Calculating 95% CI and prediction bands from 23 parameter sets ...
+
+Goodness of fit (PPC acceptable >= 50%, NRMSE acceptable <= 50%, |PE| acceptable <= 20%; PE > 0 = overprediction)
+  state                  scenario                      n      R2    NRMSE%      PPC%       PE%
+  Thiacloprid            all (pooled)                 30   0.416     47.1       100     -2.56 
+  Thiacloprid            I | 50                       30   0.416     47.1       100     -2.56 
+  (! = outside the acceptance criterion; PE at the end of exposure, 'all' = mean over scenarios, ok only if every scenario is ok)
+Time required for I | 50: 0.1 s

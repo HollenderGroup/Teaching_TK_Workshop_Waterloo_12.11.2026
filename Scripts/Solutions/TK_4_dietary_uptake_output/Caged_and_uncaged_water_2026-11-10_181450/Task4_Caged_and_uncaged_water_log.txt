@@ -1,0 +1,76 @@
+==============================================================================
+TK model with dietary uptake - TK Workshop, Outlook
+==============================================================================
+Run name : Task4   (10-Nov-2026 18:14)
+Data file: C:\Users\rathsjoh\Music\Private\00_Courses\Teaching\TK Waterloo\Scripts\TK_4_dietary_uptake_data.xlsx
+Output   : C:\Users\rathsjoh\Music\Private\00_Courses\Teaching\TK Waterloo\Scripts\TK_4_dietary_uptake_output
+  Sheet '1': column names found in row 6; the rows above are skipped.
+  sheet 1: 154 rows
+  NOTE: 2 entries in 'sheet 1 Parent concentration' set to 0 (below LOQ): <LOQ
+  Compounds in the file: Fluopyram, CGA 249287
+  Selected compound: Fluopyram (77 rows)
+  NOTE: 5 samples before t = 0 are only used to interpolate the exposure at t = 0.
+  Units in the file: medium µg/L | tissue µg/kg ww
+
+Available scenarios ("code | treatment"; medium / tissue rows):
+  "Autumn | Caged"                   G. pulex        10 /  24   tissue at t = 0.08333, 0.1667, 0.25, 0.5, 1, 1.083, 1.167, 1.25, 1.5, 2, 3, 4
+  "Autumn | Uncaged"                 G. pulex        10 /  24   tissue at t = 0.08333, 0.1667, 0.25, 0.5, 1, 1.083, 1.167, 1.25, 1.5, 2, 3, 4
+
+Models to calibrate (1 model(s) x 2 version(s) = 2 fits):
+   1. Caged_and_uncaged            Autumn | Caged  +  Autumn | Uncaged   (pooled)
+  Model versions   : with dietary uptake  and  without dietary uptake
+  Units            : converted to umol (M Fluopyram = 396.71 g/mol)
+
+##############################################################################
+MODEL 2 of 2: Caged_and_uncaged   (Autumn | Caged + Autumn | Uncaged)   TK model with uptake from water only
+##############################################################################
+  Scenario Autumn | Caged
+  Scenario Autumn | Uncaged
+    medium 8 time points | food 1 time points | tissue 24 Fluopyram values | start:     0 umol/kg ww | end of exposure:      1 d
+    NOTE: no tissue data at t = 0 for Autumn | Caged; the model starts at 0.
+    medium 8 time points | food 3 time points | tissue 24 Fluopyram values | start:     0 umol/kg ww | end of exposure:      1 d
+    NOTE: no tissue data at t = 0 for Autumn | Uncaged; the model starts at 0.
+
+Fitting Caged_and_uncaged (2 parameters: ku, ke; data transformation: square root)
+  Method: parameter-space explorer (roughness 1, profiles on)
+  Starting round 1 with initial grid of 64 parameter sets
+    Status: best fit so far is (minloglik) -10.45043
+  Starting round 2, refining a selection of 50 parameter sets, with 50 tries each
+    Status: 13 sets within total CI and 6 within inner. Best fit: -14.13679
+  Starting round 3, refining a selection of 124 parameter sets, with 20 tries each
+    Status: 201 sets within total CI and 124 within inner. Best fit: -14.13679
+  Starting round 4, refining a selection of 102 parameter sets, with 15 tries each
+    Status: 639 sets within total CI and 406 within inner. Best fit: -14.13679
+  Finished sampling, running a simplex optimisation ...
+    Status: 640 sets within total CI and 407 within inner. Best fit: -14.13741
+  Starting round 5, creating the profile likelihoods for each parameter
+    Status: 640 sets within total CI and 407 within inner. Best fit: -14.13741
+
+==============================================================================
+Results Caged_and_uncaged
+==============================================================================
+Method        : parspace  (sample: 731 sets in joint CI, 476 in inner CI)
+Units         : concentrations in umol/kg ww, time in days
+Minus log-likelihood: -14.13741   (AIC = -24.27482)
+R-square Fluopyram     :  0.635  (n = 48, transformed data)
+
+Best estimates and 95% CIs (profile likelihood)
+------------------------------------------------------------------------------
+ku   best:      542.2 (     294.5 -  1055     ) fit: 1 (log) 
+ke   best:      20.09 (     12.44 - 37.46     ) fit: 1 (log) 
+------------------------------------------------------------------------------
+
+Derived quantities (CIs: range over the parameter sets within the 95% region)
+  BCF                           26.99 (     19.47 - 35.77     )
+  t_half_d                     0.0345 (   0.01792 - 0.05599   )
+  t95_d                        0.1491 (   0.07745 - 0.242     )
+
+Calculating 95% CI and prediction bands from 528 parameter sets ...
+
+Goodness of fit (PPC acceptable >= 50%, NRMSE acceptable <= 50%, |PE| acceptable <= 20%; PE > 0 = overprediction)
+  state                  scenario                      n      R2    NRMSE%      PPC%       PE%
+  Fluopyram              all (pooled)                 48   0.635      143!     95.8      92.8!
+  Fluopyram              Autumn | Caged               24  -0.355      331!      100       232!
+  Fluopyram              Autumn | Uncaged             24   0.700      106!     91.7     -45.9!
+  (! = outside the acceptance criterion; PE at the end of exposure, 'all' = mean over scenarios, ok only if every scenario is ok)
+Time required for Caged_and_uncaged: 3.2 s

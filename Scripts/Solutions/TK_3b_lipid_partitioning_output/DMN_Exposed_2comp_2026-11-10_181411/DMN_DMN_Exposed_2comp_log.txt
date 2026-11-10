@@ -1,0 +1,97 @@
+==============================================================================
+Two-compartment TK model: lipid partitioning - TK Workshop, Exercise 3b
+==============================================================================
+Run name : DMN   (10-Nov-2026 18:14)
+Data file: C:\Users\rathsjoh\Music\Private\00_Courses\Teaching\TK Waterloo\Scripts\TK_3b_lipid_partitioning_data.xlsx
+Output   : C:\Users\rathsjoh\Music\Private\00_Courses\Teaching\TK Waterloo\Scripts\TK_3b_lipid_partitioning_output
+  Sheet '1': column names found in row 6; the rows above are skipped.
+  sheet 1: 68 rows
+  Compounds in the file: Dimethylnaphthalene
+  Selected compound: Dimethylnaphthalene (68 rows)
+  Units in the file: medium µg/L | tissue µg/kg ww
+
+Available scenarios ("code | treatment"; medium / tissue rows):
+  "DMN | Exposed"                    C. finmarchicus   9 /  59   tissue at t = 0, 0.25, 0.5, 0.75, 1, 2, 3, 4, 4.25, 4.5, 4.75, 5, 6, 7, 8
+
+Models to calibrate (1 model(s) x 2 version(s) = 2 fits):
+   1. DMN | Exposed                DMN | Exposed
+  Model versions   : with lipid compartment  and  without lipid compartment
+  Units            : converted to umol (M Dimethylnaphthalene = 156.22 g/mol)
+
+##############################################################################
+MODEL 1 of 2: DMN | Exposed   (DMN | Exposed)   two-compartment TK model (structure + lipid)
+##############################################################################
+  Scenario DMN | Exposed
+    NOTE: no medium value at t = 0; the first value (t = 0.25 d) is used from t = 0 on.
+    medium 8 time points | tissue 59 Dimethylnaphthalene values | start:  2.14 umol/kg ww | end of exposure:      4 d
+  Solver check (analytical vs. deSolve at start values): max. relative difference = 1.0e-10  -> OK
+
+Fitting DMN | Exposed (4 parameters: ku, ke, kon, koff; data transformation: square root)
+  Method: parameter-space explorer (roughness 1, profiles on)
+  Starting round 1 with initial grid of 4096 parameter sets
+    Status: best fit so far is (minloglik) 239.3673
+  Starting round 2, refining a selection of 200 parameter sets, with 35 tries each
+    Status: 1 sets within total CI and 1 within inner. Best fit: 215.2026
+  Starting round 3, refining a selection of 200 parameter sets, with 35 tries each
+    Status: 3 sets within total CI and 3 within inner. Best fit: 215.1272
+  Starting round 4, refining a selection of 200 parameter sets, with 35 tries each
+    Status: 16 sets within total CI and 7 within inner. Best fit: 215.1272
+  Starting round 5, refining a selection of 200 parameter sets, with 35 tries each
+    Status: 120 sets within total CI and 26 within inner. Best fit: 215.1272
+  Starting round 6, refining a selection of 200 parameter sets, with 35 tries each
+    Status: 589 sets within total CI and 137 within inner. Best fit: 215.1272
+  Starting round 7, refining a selection of 633 parameter sets, with 5 tries each
+    Status: 1100 sets within total CI and 307 within inner. Best fit: 215.1272
+  Finished sampling, running a simplex optimisation ...
+    Status: 1101 sets within total CI and 308 within inner. Best fit: 215.1271
+  Starting round 8, creating the profile likelihoods for each parameter
+    Profile for ke extended to higher values (11 points)
+    Profile for kon extended to higher values (33 points)
+    Profile for koff extended to lower values (1 points)
+    Profile for koff extended to higher values (2 points)
+    Finished profiling, running a simplex on the best set found ...
+    Status: 1102 sets within total CI and 309 within inner. Best fit: 215.1271
+    Profiling has detected gaps between profile and sample, which requires extra sampling rounds.
+  Starting round 9, (extra 1) refining a selection of 142 parameter sets, with 24 tries each
+    Status: 2629 sets within total CI and 816 within inner. Best fit: 215.1271
+  Starting round 10, (extra 2) refining a selection of 22 parameter sets, with 40 tries each
+    Status: 3062 sets within total CI and 908 within inner. Best fit: 215.1271
+  Starting round 11, (extra 3) refining a selection of 4 parameter sets, with 40 tries each
+    Status: 3134 sets within total CI and 908 within inner. Best fit: 215.1271
+  Starting round 12, (extra 4) refining a selection of 4 parameter sets, with 40 tries each
+    Status: 3244 sets within total CI and 908 within inner. Best fit: 215.1271
+
+==============================================================================
+Results DMN | Exposed
+==============================================================================
+Method        : parspace  (sample: 3491 sets in joint CI, 1072 in inner CI)
+Units         : concentrations in umol/kg ww, time in days
+Minus log-likelihood: 215.1271   (AIC = 438.2541)
+R-square Dimethylnaphthalene:  0.965  (n = 59, transformed data)
+
+Best estimates and 95% CIs (profile likelihood)
+------------------------------------------------------------------------------
+ku   best:       1524 (      1311 -  1785     ) fit: 1 (log) 
+ke   best:     0.8396 (    0.6354 - 1.212     ) fit: 1 (log) 
+kon  best:      1.012 (    0.7546 - 1.922     ) fit: 1 (log) 
+koff best:      1e-05 (     1e-05 - 0.1149    ) fit: 1 (log)  * CI hits lower bound
+FMS  fixed:        0.2
+------------------------------------------------------------------------------
+* A CI runs into a search bound: consider widening min/max (SECTION 1.6).
+
+Derived quantities (CIs: range over the parameter sets within the 95% region)
+  BCF_total                 3.673e+07 (      6210 - 4.081e+07 )
+  BCF_structure                  1815 (      1407 -  2131     )
+  K_lipid_structure         1.012e+05 (     14.28 - 1.262e+05 )
+  fraction_in_lipid                 1 (    0.7406 -     1     )
+  t_half_fast_d                0.6652 (    0.4237 - 0.8761    )
+  t_half_slow_d             8.602e+04 (     8.236 - 8.821e+04 )
+
+Calculating 95% CI and prediction bands from 1212 parameter sets ...
+
+Goodness of fit (PPC acceptable >= 50%, NRMSE acceptable <= 50%, |PE| acceptable <= 20%; PE > 0 = overprediction)
+  state                  scenario                      n      R2    NRMSE%      PPC%       PE%
+  Dimethylnaphthalene    all (pooled)                 59   0.965     16.9      98.3      3.03 
+  Dimethylnaphthalene    DMN | Exposed                59   0.965     16.9      98.3      3.03 
+  (! = outside the acceptance criterion; PE at the end of exposure, 'all' = mean over scenarios, ok only if every scenario is ok)
+Time required for DMN | Exposed: 18.5 s

@@ -1,0 +1,72 @@
+==============================================================================
+Two-compartment TK model: receptor binding - TK Workshop, Exercise 3a
+==============================================================================
+Run name : THI   (10-Nov-2026 18:11)
+Data file: C:\Users\rathsjoh\Music\Private\00_Courses\Teaching\TK Waterloo\Scripts\TK_3a_receptor_binding_data.xlsx
+Output   : C:\Users\rathsjoh\Music\Private\00_Courses\Teaching\TK Waterloo\Scripts\TK_3a_receptor_binding_output
+  Sheet '1': column names found in row 6; the rows above are skipped.
+  sheet 1: 138 rows
+  NOTE: 5 entries in 'sheet 1 Parent concentration' set to 0 (below LOQ): <LOQ
+  Compounds in the file: Thiacloprid
+  Selected compound: Thiacloprid (138 rows)
+  Units in the file: medium µg/L | tissue µg/kg ww
+
+Available scenarios ("code | treatment"; medium / tissue rows):
+  "I | 50"                           G. pulex         4 /  30   tissue at t = 0, 0.1243, 0.25, 0.4167, 1.001, 1.417, 1.997, 2.125, 2.25, 2.417, 3, 4, 6, 8, 10
+  "II | 0.05"                        G. pulex        10 /  12   tissue at t = 10, 15, 20, 25
+  "II | 0.5"                         G. pulex        10 /  12   tissue at t = 10, 15, 20, 25
+  "II | 5"                           G. pulex         4 /   6   tissue at t = 4, 8
+  "III | 1500"                       G. pulex         4 /   6   tissue at t = 2, 4
+  "III | 5"                          G. pulex         4 /   6   tissue at t = 2, 4
+  "III | 50"                         G. pulex         4 /   6   tissue at t = 2, 4
+  "III | 500"                        G. pulex         4 /   6   tissue at t = 2, 4
+  "III | 5000"                       G. pulex         4 /   6   tissue at t = 2, 4
+
+Models to calibrate (1 model(s) x 2 version(s) = 2 fits):
+   1. I | 50                       I | 50
+  Model versions   : with receptor binding  and  without receptor binding
+  Units            : converted to umol (M Thiacloprid = 252.72 g/mol)
+
+##############################################################################
+MODEL 1 of 2: I | 50   (I | 50)   two-compartment TK model (structure + receptor binding)
+##############################################################################
+  Scenario I | 50
+    medium 3 time points | tissue 30 Thiacloprid values | start:     0 umol/kg ww | end of exposure:      2 d
+
+Fitting I | 50 (4 parameters: ku, ke, kon, Bmax; data transformation: square root)
+  Method: Nelder-Mead simplex (2 runs) from the start values
+  Simplex run 1 (rough): MLL = 0.9384666 (71 evaluations)
+  Simplex run 2: MLL = -33.90661 (437 evaluations)
+
+==============================================================================
+Results I | 50
+==============================================================================
+Method        : simplex
+Units         : concentrations in umol/kg ww, time in days
+Minus log-likelihood: -33.90661   (AIC = -59.81321)
+R-square Thiacloprid   :  0.974  (n = 30, transformed data)
+
+Best estimates and 95% CIs (profile likelihood)
+------------------------------------------------------------------------------
+ku   best:      7.887 (      7.02 - 9.044     ) fit: 1 (log) 
+ke   best:       3.14 (     2.728 -  3.65     ) fit: 1 (log) 
+kon  best:  9.985e+04 (     69.74 - 1e+05     ) fit: 1 (log)  * CI hits upper bound
+koff fixed:          0
+Bmax best:      25.75 (     23.29 - 28.29     ) fit: 1 (log) 
+FMS  fixed:       0.01
+------------------------------------------------------------------------------
+* A CI runs into a search bound: consider widening min/max (SECTION 1.6).
+
+Derived quantities (CIs: range over the parameter sets within the 95% region)
+  BCF_structure                 2.511 (     2.356 - 2.665     )
+  t_half_structure_d           0.2207 (    0.1922 - 0.2534    )
+  receptor_capacity            0.2575 (    0.2328 - 0.2828    )
+
+Calculating 95% CI and prediction bands from 51 parameter sets ...
+
+Goodness of fit (PPC acceptable >= 50%, NRMSE acceptable <= 50%, |PE| acceptable <= 20%; PE > 0 = overprediction)
+  state                  scenario                      n      R2    NRMSE%      PPC%       PE%
+  Thiacloprid            all (pooled)                 30   0.974     10.8       100     -2.16 
+  Thiacloprid            I | 50                       30   0.974     10.8       100     -2.16 
+  (! = outside the acceptance criterion; PE at the end of exposure, 'all' = mean over scenarios, ok only if every scenario is ok)
+Time required for I | 50: 1.8 min

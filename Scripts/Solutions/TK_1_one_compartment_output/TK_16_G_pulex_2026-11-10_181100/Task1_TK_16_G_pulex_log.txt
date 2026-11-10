@@ -1,0 +1,78 @@
+==============================================================================
+One-compartment TK model - TK Workshop, Exercise 1
+==============================================================================
+Run name : Task1   (10-Nov-2026 18:11)
+Data file: C:\Users\rathsjoh\Music\Private\00_Courses\Teaching\TK Waterloo\Scripts\TK_1_one_compartment_data.xlsx
+Output   : C:\Users\rathsjoh\Music\Private\00_Courses\Teaching\TK Waterloo\Scripts\TK_1_one_compartment_output
+  Sheet '1': column names found in row 6; the rows above are skipped.
+  sheet 1: 2928 rows
+  Compounds in the file: Atenolol, Azoxystrobin, Benzotriazole, Carbamazepine, Citalopram, Cyprodinil, Diclofenac, Fluopyram, Sulfamethoxazole, Tebuconazole, Terbutryn, Thiacloprid
+  Selected compound: Citalopram (244 rows)
+  Units in the file: medium µg/L | tissue µg/kg ww
+
+Available scenarios ("code | treatment"; medium / tissue rows):
+  "TK | 11 | G. pulex"               G. pulex         4 /  24   tissue at t = 0.08333, 0.1667, 0.25, 0.5, 0.75, 1, 1.083, 1.167, 1.25, 1.5, 2, 3
+  "TK | 16 | G. pulex"               G. pulex         4 /  29   tissue at t = 0, 0.08333, 0.1667, 0.25, 0.5, 0.75, 1, 1.083, 1.167, 1.25, 1.5, 2, 3, 4
+  "TK | 21 | G. pulex"               G. pulex         4 /  26   tissue at t = 0.08333, 0.1667, 0.25, 0.5, 0.75, 1, 1.083, 1.167, 1.25, 1.5, 2, 3, 4
+  "TK | 6 | G. pulex"                G. pulex         4 /  26   tissue at t = 0.08333, 0.1667, 0.25, 0.5, 0.75, 1, 1.083, 1.167, 1.25, 1.5, 2, 3, 4
+  "TK | 11 | H. azteca"              H. azteca        4 /  26   tissue at t = 0.08333, 0.1667, 0.25, 0.5, 0.75, 1, 1.083, 1.167, 1.25, 1.5, 2, 3, 4
+  "TK | 16 | H. azteca"              H. azteca        4 /  29   tissue at t = 0, 0.08333, 0.1667, 0.25, 0.5, 0.75, 1, 1.083, 1.167, 1.25, 1.5, 2, 3, 4
+  "TK | 21 | H. azteca"              H. azteca        4 /  26   tissue at t = 0.08333, 0.1667, 0.25, 0.5, 0.75, 1, 1.083, 1.167, 1.25, 1.5, 2, 3, 4
+  "TK | 6 | H. azteca"               H. azteca        4 /  26   tissue at t = 0.08333, 0.1667, 0.25, 0.5, 0.75, 1, 1.083, 1.167, 1.25, 1.5, 2, 3, 4
+
+Models to calibrate (1 model(s)):
+   1. TK | 16 | G. pulex           TK | 16 | G. pulex
+  Units            : converted to umol (M Citalopram = 324.39 g/mol)
+
+##############################################################################
+MODEL 1 of 1: TK | 16 | G. pulex   (TK | 16 | G. pulex)
+##############################################################################
+  Scenario TK | 16 | G. pulex
+    medium 3 time points | tissue 29 Citalopram values | start: 0.2194 umol/kg ww | end of exposure:      1 d
+  Solver check (analytical vs. deSolve at start values): max. relative difference = 4.8e-10  -> OK
+
+Fitting TK | 16 | G. pulex (2 parameters: ku, ke; data transformation: square root)
+  Method: parameter-space explorer (roughness 1, profiles on)
+  Starting round 1 with initial grid of 64 parameter sets
+    Status: best fit so far is (minloglik)  30.0774
+  Starting round 2, refining a selection of 50 parameter sets, with 50 tries each
+    Status: 3 sets within total CI and 3 within inner. Best fit: 1.952688
+  Starting round 3, refining a selection of 50 parameter sets, with 40 tries each
+    Status: 46 sets within total CI and 28 within inner. Best fit: 1.952688
+  Starting round 4, refining a selection of 87 parameter sets, with 28 tries each
+    Status: 155 sets within total CI and 93 within inner. Best fit: 1.952688
+  Starting round 5, refining a selection of 184 parameter sets, with 13 tries each
+    Status: 425 sets within total CI and 265 within inner. Best fit: 1.952688
+  Finished sampling, running a simplex optimisation ...
+    Status: 426 sets within total CI and 266 within inner. Best fit: 1.947472
+  Starting round 6, creating the profile likelihoods for each parameter
+    Finished profiling, running a simplex on the best set found ...
+    Status: 427 sets within total CI and 267 within inner. Best fit: 1.947472
+
+==============================================================================
+Results TK | 16 | G. pulex
+==============================================================================
+Method        : parspace  (sample: 520 sets in joint CI, 341 in inner CI)
+Units         : concentrations in umol/kg ww, time in days
+Minus log-likelihood: 1.947472   (AIC = 7.894944)
+R-square Citalopram    :  0.953  (n = 29, transformed data)
+
+Best estimates and 95% CIs (profile likelihood)
+------------------------------------------------------------------------------
+ku   best:       50.9 (     44.83 - 57.81     ) fit: 1 (log) 
+ke   best:      1.469 (     1.268 - 1.697     ) fit: 1 (log) 
+------------------------------------------------------------------------------
+
+Derived quantities (CIs: range over the parameter sets within the 95% region)
+  BCF                           34.64 (     31.98 - 37.62     )
+  t_half_d                     0.4717 (    0.4085 - 0.5489    )
+  t95_d                         2.039 (     1.766 - 2.372     )
+
+Calculating 95% CI and prediction bands from 369 parameter sets ...
+
+Goodness of fit (PPC acceptable >= 50%, NRMSE acceptable <= 50%, |PE| acceptable <= 20%; PE > 0 = overprediction)
+  state                  scenario                      n      R2    NRMSE%      PPC%       PE%
+  Citalopram             all (pooled)                 29   0.953     17.9       100     -8.45 
+  Citalopram             TK | 16 | G. pulex           29   0.953     17.9       100     -8.45 
+  (! = outside the acceptance criterion; PE at the end of exposure, 'all' = mean over scenarios, ok only if every scenario is ok)
+Time required for TK | 16 | G. pulex: 1.3 s
