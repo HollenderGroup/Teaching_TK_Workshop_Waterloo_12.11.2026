@@ -24,11 +24,11 @@ No prior experience with bioaccumulation or programming is needed.
 
 | # | Script | Model | Dataset | Run time* |
 |---|--------|-------|---------|-----------|
-| 1 | `TK_1_one_compartment.R` | Standard one-compartment model (ku, ke) | 12 contaminants in *Gammarus pulex* and *Hyalella azteca* at 6–21 °C (Raths et al. 2023, *Glob. Change Biol.*) | ~6 s |
+| 1 | `TK_1_one_compartment.R` | Standard one-compartment model (ku, ke) | 12 contaminants in *Gammarus pulex* and *Hyalella azteca* at 6–21 °C (Raths et al. 2023, *Glob. Change Biol.*) | ~10 s |
 | 2 | `TK_2_biotransformation.R` | Parent + biotransformation product (km, kem) | Diflufenican and its metabolite AE B107137 in *Asellus aquaticus* (Raths et al., submitted) | ~30 s |
 | 3a | `TK_3a_receptor_binding.R` | Two compartments: structure + saturable receptor binding (kon, koff, Bmax) | Thiacloprid in *G. pulex* (Raths et al. 2023, *Environ. Sci. Technol.*) | ~12 min (simplex only: ~2 min) |
 | 3b | `TK_3b_lipid_partitioning.R` | Two compartments: structure + lipid | Dimethylnaphthalene in a marine copepod (Jager et al. 2017, *Environ. Sci. Technol.*) | ~30 s |
-| 4 | `TK_4_dietary_uptake.R` | One compartment with uptake from water and food | Fluopyram in caged vs. uncaged *G. pulex* (Raths et al. 2023, *Environ. Toxicol. Chem.*) | ~21 s |
+| 4 | `TK_4_dietary_uptake.R` | One compartment with uptake from water and food | Fluopyram in caged vs. uncaged *G. pulex* (Raths et al. 2023, *Environ. Toxicol. Chem.*) | ~30 s |
 
 \*Default settings, on a standard laptop.
 
