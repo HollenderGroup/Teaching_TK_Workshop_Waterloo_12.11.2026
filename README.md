@@ -113,7 +113,7 @@ How the models are fitted, how to read the parameter-space plot, and how to add 
 
 ## Background and credits
 
-The scripts are a simplified R re-implementation of the BYOM model **TK-metabolism** (<https://github.com/HollenderGroup/Bioaccumulation_TK-metabolism>), built on the BYOM v6.2 framework by Tjalling Jager (<https://www.debtox.info/byom.html>). They include the parameter-space explorer from openGUTS (<https://www.openguts.info>) as implemented in BYOM, and the simplex optimisation. Fitting and confidence intervals follow BYOM. The goodness-of-fit criteria are TK analogues of the EFSA (2018) validation criteria.
+The scripts are a simplified R re-implementation of the BYOM model **TK-metabolism** (<https://github.com/HollenderGroup/Bioaccumulation_TK-metabolism>), built on the BYOM v6.2 framework by Tjalling Jager (<https://www.debtox.info/byom.html>). They include the parameter-space explorer from openGUTS (<https://www.openguts.info>) as implemented in BYOM, and the simplex optimisation. Fitting and confidence intervals follow BYOM. The goodness-of-fit criteria are TK analogues of the EFSA (2018) validation criteria (Raths et al., submitted, "From laboratory to mesocosm: Temperature and species dependent toxicokinetics of the fluorinated herbicide Diflufenican"; doi TBA).
 
 ### Data sources
 
