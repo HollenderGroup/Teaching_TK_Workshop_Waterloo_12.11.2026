@@ -7,6 +7,7 @@
 R scripts, curated datasets and teaching material for a half-day, hands-on workshop on **toxicokinetic (TK) modelling** of organic contaminants in aquatic invertebrates.
 
 **University of Waterloo, 12 November 2026** · Johannes Raths, Eawag
+
 https://uwaterloo.ca/water-institute/events/invertebrates-under-pressure-pesticides-heatwaves 
 
 Toxicokinetic processes (uptake, elimination and biotransformation) set the internal concentration of an exposed organism and so link exposure to effects. Through short lectures and guided exercises on real experimental data, the workshop starts from the classic one-compartment model and extends it step by step towards real-world complexity.
