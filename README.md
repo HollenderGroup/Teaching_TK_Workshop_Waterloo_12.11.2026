@@ -47,7 +47,7 @@ Install them in this order. RStudio is only the editor and does **not** include 
 
 ### 2. Download the material
 
-- **Easiest:** on the [Zenodo record](https://doi.org/10.5281/zenodo.XXXXXXX), download the ZIP file and unzip it.
+- **Easiest:** on the [Zenodo record](https://doi.org/10.5281/zenodo.24121946), download the ZIP file and unzip it.
 - **Or** on GitHub: click **Code → Download ZIP**, or clone the repository:
   ```bash
   git clone https://github.com/HollenderGroup/Teaching_TK_Workshop_Waterloo_12.11.2026.git
@@ -133,7 +133,7 @@ This work was supported by the Swiss National Science Foundation (SNSF), grant n
 
 ## How to cite this material
 
-> Raths, J. (2026). *Bioaccumulation in Aquatic Organisms: From One-Compartment Toxicokinetic Models to Real-World Complexity. Workshop material, University of Waterloo* (Version 1.0.0) [Lesson]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+> Raths, J. (2026). *Bioaccumulation in Aquatic Organisms: From One-Compartment Toxicokinetic Models to Real-World Complexity. Workshop material, University of Waterloo* (Version 1.0.0) [Lesson]. Zenodo. https://doi.org/10.5281/zenodo.24121946
 
 GitHub shows the citation under **"Cite this repository"** (from `CITATION.cff`).
 
