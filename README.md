@@ -40,8 +40,10 @@ Each script has its matching data file (`*_data.xlsx`) in the same folder. `TK_T
 
 ### 1. Install R and RStudio
 
-- R (version 4.3 or newer): <https://cran.r-project.org>
-- RStudio Desktop: <https://posit.co/download/rstudio-desktop/>
+Install them in this order. RStudio is only the editor and does **not** include R.
+
+1. **R** (version 4.3 or newer): <https://cran.r-project.org>
+2. **RStudio Desktop:** <https://posit.co/download/rstudio-desktop/>
 
 ### 2. Download the material
 

@@ -1,0 +1,57 @@
+{
+  "title": "Bioaccumulation in Aquatic Organisms: From One-Compartment Toxicokinetic Models to Real-World Complexity. Workshop material, University of Waterloo",
+  "upload_type": "lesson",
+  "description": "<p>R scripts, curated datasets and teaching material for a half-day, hands-on workshop on toxicokinetic (TK) modelling of organic contaminants in aquatic invertebrates, held at the University of Waterloo on 12 November 2026.</p><p>Exercises: (1) the standard one-compartment TK model, (2) parent–metabolite models for biotransformation, (3a) two-compartment kinetics with receptor binding (elimination resistance), (3b) lipid partitioning, and (4) dietary uptake. All scripts fit models to published experimental data and estimate confidence intervals with the parameter-space explorer. They are an R re-implementation of the BYOM model TK-metabolism (BYOM v6.2 framework by Tjalling Jager).</p><p>See README.md for installation, instructions and data sources. Please cite the original studies when using the datasets.</p>",
+  "creators": [
+    {
+      "name": "Raths, Johannes",
+      "affiliation": "Eawag, Swiss Federal Institute of Aquatic Science and Technology",
+      "orcid": "0000-0002-3258-0893"
+    }
+  ],
+  "keywords": [
+    "toxicokinetics",
+    "bioaccumulation",
+    "bioconcentration factor",
+    "biotransformation",
+    "ecotoxicology",
+    "aquatic invertebrates",
+    "BYOM",
+    "R",
+    "teaching material"
+  ],
+  "license": "gpl-3.0-or-later",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/HollenderGroup/Bioaccumulation_TK-metabolism",
+      "relation": "isDerivedFrom",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "10.1111/gcb.16542",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1021/acs.est.3c01891",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1021/acs.est.7b02212",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1002/etc.5615",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://www.debtox.info/byom.html",
+      "relation": "isDerivedFrom",
+      "resource_type": "software"
+    }
+  ]
+}
