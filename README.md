@@ -127,6 +127,10 @@ Please cite the original studies when you use the datasets:
 - Jager, T., Øverjordet, I. B., Nepstad, R., & Hansen, B. H. (2017). Dynamic links between lipid storage, toxicokinetics and mortality in a marine copepod exposed to dimethylnaphthalene. *Environmental Science & Technology*, 51(13), 7707–7713. <https://doi.org/10.1021/acs.est.7b02212>
 - Raths, J., Schnurr, J., Bundschuh, M., Pinto, F. E., Janfelt, C., & Hollender, J. (2023). Importance of dietary uptake for in situ bioaccumulation of systemic fungicides using *Gammarus pulex* as a model organism. *Environmental Toxicology and Chemistry*, 42(9), 1993–2006. <https://doi.org/10.1002/etc.5615>
 
+## Funding
+
+This work was supported by the Swiss National Science Foundation (SNSF), grant number 200020_219277.
+
 ## How to cite this material
 
 > Raths, J. (2026). *Bioaccumulation in Aquatic Organisms: From One-Compartment Toxicokinetic Models to Real-World Complexity. Workshop material, University of Waterloo* (Version 1.0.0) [Lesson]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
