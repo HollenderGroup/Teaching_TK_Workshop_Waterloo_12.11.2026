@@ -1,6 +1,6 @@
 # Bioaccumulation in Aquatic Organisms: From One-Compartment Toxicokinetic Models to Real-World Complexity
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24121946.svg)](https://doi.org/10.5281/zenodo.24121946)
 [![Code: GPL v3](https://img.shields.io/badge/code-GPL%20v3-blue.svg)](LICENSE.md)
 [![Content: CC BY 4.0](https://img.shields.io/badge/content-CC%20BY%204.0-lightgrey.svg)](LICENSE.md)
 
